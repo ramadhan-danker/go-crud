@@ -20,6 +20,13 @@
   <h3>Tambah Data Pasien</h3>
   <a href="/pasien" class="btn btn-sm btn-primary ">Lihat Data</a>
 
+  {{if .pesan}}
+    <div class="alert alert-success">
+      {{.pesan}}
+    </div>
+  {{end}}
+
+
   <form action="/pasien/add" method="post">
     <div class="form-group">
       <label>Nama Lengkap</label>

@@ -1,8 +1,8 @@
 package passienController
 
 import (
-	"fmt"
 	"github.com/ramadhan-danker/go-crud/entities"
+	"github.com/ramadhan-danker/go-crud/models"
 	"html/template"
 	"net/http"
 )
@@ -14,6 +14,9 @@ func Index(response http.ResponseWriter, request *http.Request) {
 	}
 	temp.Execute(response, nil)
 }
+
+var pasienModel = models.NewPasienModel()
+
 func Add(response http.ResponseWriter, request *http.Request) {
 	if request.Method == http.MethodGet {
 		temp, err := template.ParseFiles("views/pasien/add.html")
@@ -33,7 +36,12 @@ func Add(response http.ResponseWriter, request *http.Request) {
 		pasien.Alamat = request.Form.Get("alamat")
 		pasien.NoHp = request.Form.Get("no_hp")
 
-		fmt.Println(pasien)
+		pasienModel.Create(pasien)
+		data := map[string]interface{}{
+			"pesan": "Data pasien berhasil di simpan",
+		}
+		temp, _ := template.ParseFiles("views/pasien/add.html")
+		temp.Execute(response, data)
 	}
 
 }
