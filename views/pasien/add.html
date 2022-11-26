@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    .container {
+      max-width: 550px;
+    }
+  </style>
+  <title>Golang Crud</title>
+</head>
+<body>
+<div class="container">
+  <h3>Tambah Data Pasien</h3>
+  <a href="/pasien" class="btn btn-sm btn-primary ">Lihat Data</a>
+
+  <form action="/pasien/add" method="post">
+    <div class="form-group">
+      <label>Nama Lengkap</label>
+      <input type="text" name="nama_lengkap" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>NIK</label>
+      <input type="text" name="nik" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Jenis Kelamin</label>
+      <select name="jenis_kelamin" class="form-control">
+        <option value="">Pilih Jenis Kelamin</option>
+        <option value="1">Laki-Laki</option>
+        <option value="2">Perempuan</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Tempat lahir</label>
+      <input type="text" name="tempat_lahir" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Tanggal lahir</label>
+      <input type="date" name="tanggal_lahir" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Alamat</label>
+      <textarea name="alamat" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+      <label>NO.Hp</label>
+      <input type="text" name="no_hp" class="form-control">
+    </div>
+    <div class="form-group mt-3">
+      <button class="btn btn-primary btn-block" type="submit">Simpan</button>
+    </div>
+
+  </form>
+
+
+</div>
+
+</body>
+</html>
