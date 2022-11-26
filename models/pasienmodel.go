@@ -2,6 +2,7 @@ package models
 
 import (
 	"database/sql"
+	//"github.com/ramadhan-danker/go-crud/entities"
 )
 
 type PasienModel struct {

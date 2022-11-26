@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-func Index(response http.ResponseWriter, reques *http.Request) {
+func Index(response http.ResponseWriter, request *http.Request) {
 	temp, err := template.ParseFiles("views/pasien/index.html")
 	if err != nil {
 		panic(err)
